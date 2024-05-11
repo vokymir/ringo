@@ -1,9 +1,11 @@
 /**
  * Encapsulate team id and name.
+ * Can get/set name, get id (immutable).
+ * ID should be unique, here not responsible.
  */
 class Team {
 
-    private id: number;
+    private readonly id: number;
     private name: string;
 
     /**

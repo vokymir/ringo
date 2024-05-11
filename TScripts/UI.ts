@@ -1,4 +1,7 @@
-
+/**
+ * In charge of all UI, building home/tournament/match(/end?) pages,
+ * create popups, update visuals,...
+ */
 class UI {
 
     static buildHomePage() {
@@ -47,7 +50,7 @@ class UI {
     }
 
     static afterSavingMatch() {
-
+        // popup: don't U wanna leave the match for tournament and next match?
     }
 
     /**

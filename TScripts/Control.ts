@@ -1,21 +1,23 @@
+/**
+ * If more functionality is needed, combine them in one function as static function of this class.
+ */
+class Control {
 
-class Control{
-
-    static createTournament(){
+    static createTournament() {
         // new tournament
         // buildTournamentPage
     }
 
-    static loadTournament(){
+    static loadTournament() {
         // load
         // build
     }
 
-    static resumeTournament(){
+    static resumeTournament() {
         // build (from local storage)
     }
 
-    static justMatch(){
+    static justMatch() {
         // build just match
     }
 }

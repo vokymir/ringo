@@ -1,4 +1,8 @@
-
+/**
+ * In charge of history saved to Local storage.
+ * Apart of saving the history can also EXECUTE ON CHANGING HISTORY,
+ * when needed for undo/redo functionality.
+ */
 class HistoryManager {
 
     static getCurrentSerialNumber() {
@@ -28,13 +32,5 @@ class HistoryManager {
     static do(log: Log, save: boolean = false) {
         // do what is in the log
         // if save, than add it to history
-    }
-
-    static saveToSessionStorage(key: string, sth: any) {
-
-    }
-
-    static getFromSessionStorage(key: string): any {
-
     }
 }

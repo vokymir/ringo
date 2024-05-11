@@ -1,4 +1,7 @@
-
+/**
+ * In charge of saving and loading Tournaments as JSON files.
+ * Saving on the Tournament page, Loading on the Homepage.
+ */
 class FileManager {
 
     static loadJSON() {
@@ -14,7 +17,7 @@ class FileManager {
     }
 
     static exportLogJSON() {
-
+        // in fact, export snapshot of the tournament alongside with the logs - for faster loading and ease of use
     }
 
     static exportSnapshotJSON() {
