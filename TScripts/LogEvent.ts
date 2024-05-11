@@ -1,5 +1,4 @@
 
-enum LogEvent{
-    EDIT_MATCH,
-    EDIT_SETTINGS
+enum LogEvent {
+    SAVE_MATCH, // [string, any][]
 }

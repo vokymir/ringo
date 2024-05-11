@@ -45,4 +45,16 @@ class UI {
     static updateTournamentPage() {
         // basically when change of order method happen, so the ui reflects it
     }
+
+    static afterSavingMatch() {
+
+    }
+
+    /**
+     * Win effects for the end of match. Not intrusive, maybe missclick? Sth like confetti.
+     * @param team Team who won.
+     */
+    static afterWinMatch(team: Team) {
+
+    }
 }

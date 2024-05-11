@@ -1,23 +1,23 @@
 
-class FileManager{
+class FileManager {
 
-    static loadJSON(){
+    static loadJSON() {
         // to decide which one to use
     }
 
-    static loadLogJSON(){
+    static loadLogJSON() {
         // load tournament with history
     }
 
-    static loadSnapshotJSON(){
+    static loadSnapshotJSON() {
         // load tournament in given moment
     }
 
-    static exportLogJSON(){
+    static exportLogJSON() {
 
     }
 
-    static exportSnapshotJSON(){
+    static exportSnapshotJSON() {
 
     }
 }
