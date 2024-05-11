@@ -5,7 +5,7 @@
 class Team {
     /**
      * Create new Team.
-     * @param id In N, greater than 0, UNIQUE!
+     * @param id In N, greater than 0, UNIQUE! - your responsibility to provide Team with unique ID.
      * @param name Any string.
      */
     constructor(id, name) {

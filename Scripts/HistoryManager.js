@@ -18,4 +18,8 @@ class HistoryManager {
         // do what is in the log
         // if save, than add it to history
     }
+    static saveToSessionStorage(key, sth) {
+    }
+    static getFromSessionStorage(key) {
+    }
 }
