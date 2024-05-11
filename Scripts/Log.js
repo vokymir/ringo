@@ -1,13 +1,22 @@
 "use strict";
 class Log {
-    constructor(id, type, previous, after) {
-        this.id = id;
+    constructor(idOfObject, type, previous, after) {
+        this.serialNumber = -1;
+        this.idOfObject = idOfObject;
         this.type = type;
         this.previous = previous;
         this.after = after;
     }
-    getID() {
-        return this.id;
+    setSerialNumber(num) {
+        if (this.serialNumber != -1) {
+            this.serialNumber = num;
+        }
+    }
+    getSerialNumber() {
+        return this.serialNumber;
+    }
+    getIDofObject() {
+        return this.idOfObject;
     }
     getType() {
         return this.type;
