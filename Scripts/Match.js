@@ -1,7 +1,11 @@
 "use strict";
 /**
  * Represents one Match, has a lot of info and few useful functions.
- * Has unique id for IDs of both Teams lower than 13.378 - doesn't tested further.
+ * Has unique id created from IDs of both Teams (order doesn't matter).
+ * Guranteed unique id for Teams IDs lower than 13.378 - doesn't tested further.
+ *
+ * It's functions completely comprehend the Match page, given that it is created with correct functions on buttons etc. (job of UI)
+ * Save function intended to only be called once the match ended, otherwise redundant logs in history - but will work just fine.
  */
 class Match {
     /**
@@ -221,14 +225,14 @@ class Match {
             timeOfStart: this.timeOfStart,
             timeOfEnd: this.timeOfEnd
         };
-        HistoryManager.saveToSessionStorage("previousInfo", previousInfo);
+        BrowserStorage.saveToSessionStorage("previousInfo", previousInfo);
     }
     save(askToLeave = true) {
         this.setTimeOfEnd();
         if (this.shouldMatchEnd()) {
             this.finished = true;
         }
-        const previousInfo = HistoryManager.getFromSessionStorage("previousInfo");
+        const previousInfo = BrowserStorage.getFromSessionStorage("previousInfo");
         // save previous info - only what was changed // if this doesnt work, edit to just save everything
         const matchAsDict = JSON.parse(JSON.stringify(this));
         let previous = [];

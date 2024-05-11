@@ -1,4 +1,8 @@
 "use strict";
+/**
+ * In charge of all UI, building home/tournament/match(/end?) pages,
+ * create popups, update visuals,...
+ */
 class UI {
     static buildHomePage() {
         // append all buttons and whatever
@@ -34,6 +38,7 @@ class UI {
         // basically when change of order method happen, so the ui reflects it
     }
     static afterSavingMatch() {
+        // popup: don't U wanna leave the match for tournament and next match?
     }
     /**
      * Win effects for the end of match. Not intrusive, maybe missclick? Sth like confetti.
