@@ -60,4 +60,13 @@ class UI {
     static afterWinMatch(team: Team) {
 
     }
+
+    /**
+     * Warn user about this and try to explain.
+     * @param id ID which is being added for the second time.
+     */
+    static duplicateTeamID(id: number) {
+        console.log("Cannot add two teams with the same ID.\nThe invalid id is: " + id);
+        // pop-up to explain to user
+    }
 }

@@ -55,6 +55,10 @@ class Match {
         return this.id;
     }
 
+    getTeams(): [Team, Team] {
+        return [this.teamL, this.teamR];
+    }
+
     getPointsToSet(): number {
         return this.pointsToSet;
     }
@@ -250,7 +254,7 @@ class Match {
     }
 
     /**
-     * Save 
+     * Save info about the Match in session storage so we can create Log when saving the results.
      */
     startOfMatch() {
         this.setTimeOfStart();
@@ -271,6 +275,23 @@ class Match {
         BrowserStorage.saveToSessionStorage("previousInfo", previousInfo);
     }
 
+    /**
+     * Hard reset everything to 0.
+     */
+    reset() {
+        this.setPoints(this.teamL, 0);
+        this.setPoints(this.teamR, 0);
+        this.teamLsets = 0;
+        this.teamRsets = 0;
+        this.teamLpointsTotal = 0;
+        this.teamRpointsTotal = 0;
+        this.finished = false;
+    }
+
+    /**
+     * Create Log and save it to History. [optional] Also ask user to leave for Tournament page.
+     * @param askToLeave Should the UI asks user to leave the Match page and go to Tournament?
+     */
     save(askToLeave: boolean = true) {
         this.setTimeOfEnd();
 
