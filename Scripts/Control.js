@@ -27,9 +27,11 @@ class Control {
         downloadLink.download = 'data.json';
         downloadLink.textContent = 'Download JSON';
         document.body.appendChild(downloadLink);
+        /*
         downloadLink.addEventListener('click', () => {
             URL.revokeObjectURL(downloadLink.href);
-        });
+          });
+        */
     }
     static resumeTournament() {
         // build (from local storage)
