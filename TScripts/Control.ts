@@ -35,10 +35,11 @@ class Control{
 
         document.body.appendChild(downloadLink);
 
+        /*
         downloadLink.addEventListener('click', () => {
             URL.revokeObjectURL(downloadLink.href);
           });
-          
+        */
 
     }
 
