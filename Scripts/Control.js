@@ -24,14 +24,21 @@ class Control {
         const jsonBlob = new Blob([a], { type: 'application/json' });
         const downloadLink = document.createElement('a');
         downloadLink.href = URL.createObjectURL(jsonBlob);
-        downloadLink.download = 'data.json';
-        downloadLink.textContent = 'Download JSON';
+        downloadLink.download = 'object.json';
+        downloadLink.textContent = 'Download Object';
         document.body.appendChild(downloadLink);
-        /*
         downloadLink.addEventListener('click', () => {
             URL.revokeObjectURL(downloadLink.href);
-          });
-        */
+        });
+        const jsonBlobII = new Blob([b], { type: 'application/json' });
+        const downloadLinkII = document.createElement('a');
+        downloadLinkII.href = URL.createObjectURL(jsonBlobII);
+        downloadLinkII.download = 'tuple.json';
+        downloadLinkII.textContent = 'Download Tuple';
+        document.body.appendChild(downloadLinkII);
+        downloadLinkII.addEventListener('click', () => {
+            URL.revokeObjectURL(downloadLinkII.href);
+        });
     }
     static resumeTournament() {
         // build (from local storage)
