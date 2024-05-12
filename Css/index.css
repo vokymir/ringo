@@ -1,5 +1,4 @@
-
-button{
+button {
     background-color: rgb(9, 90, 90);
     color: rgb(236, 174, 236);
     border: 10px solid red;
@@ -8,8 +7,17 @@ button{
     font-size: large;
 }
 
-button:hover{
+button:hover {
     background-color: rgb(202, 223, 9);
     color: rgb(92, 77, 12);
     border: 10px dashed blue;
+}
+
+::backdrop {
+    background-image: linear-gradient(45deg,
+            magenta,
+            rebeccapurple,
+            dodgerblue,
+            green);
+    opacity: 0.75;
 }

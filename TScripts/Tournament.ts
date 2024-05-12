@@ -14,6 +14,10 @@ class Tournament {
     private pointsToSet: number = 15;
     private setsToWin: number = 2;
 
+    private pointsForWin: number = 1;
+    private pointsForLose: number = 0;
+    private pointsForDraw: number = 0;
+
     constructor() { }
 
     /**
@@ -124,6 +128,44 @@ class Tournament {
 
     getTeams(): Team[] {
         return this.teams;
+    }
+
+    getPointsForWin(): number {
+        return this.pointsForWin;
+    }
+
+    /**
+     * 
+     * @param num greater or equal 0
+     */
+    setPointsForWin(num: number) {
+        if (num >= 0) {
+            this.pointsForWin = num;
+        }
+    }
+
+    getPointsForLose(): number {
+        return this.pointsForLose;
+    }
+
+    /**
+     * 
+     * @param num any number will do, even negative, if its spicy
+     */
+    setPointsForLose(num: number) {
+        this.pointsForLose = num;
+    }
+
+    getPointsForDraw(): number {
+        return this.pointsForDraw;
+    }
+
+    /**
+     * 
+     * @param num any number
+     */
+    setPointsForDraw(num: number) {
+        this.pointsForDraw = num;
     }
 
     addPassedMatch(match: Match) {

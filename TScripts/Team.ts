@@ -7,6 +7,7 @@ class Team {
 
     private readonly id: number;
     private name: string;
+    private points: number = 0;
 
     /**
      * Create new Team.
@@ -44,5 +45,30 @@ class Team {
      */
     public setName(newName: string): void {
         this.name = newName;
+    }
+
+    public getPoints(): number {
+        return this.points;
+    }
+
+    /**
+     * 
+     * @param num greater than 0, whole
+     */
+    public setPoints(num: number) {
+        if (num >= 0) {
+            this.points = Math.ceil(num);
+        }
+    }
+
+    /**
+     * 
+     * @param howMany how many points to add, can be negative
+     */
+    public addPoints(howMany: number) {
+        this.points += Math.ceil(howMany);
+        if (this.points < 0) {
+            this.points = 0;
+        }
     }
 }
