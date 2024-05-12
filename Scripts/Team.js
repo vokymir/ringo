@@ -11,6 +11,7 @@ class Team {
      * @param name Any string.
      */
     constructor(id, name) {
+        this.points = 0;
         if (id <= 0) {
             throw new Error("Team ID must be greater than zero.");
         }
@@ -38,5 +39,27 @@ class Team {
      */
     setName(newName) {
         this.name = newName;
+    }
+    getPoints() {
+        return this.points;
+    }
+    /**
+     *
+     * @param num greater than 0, whole
+     */
+    setPoints(num) {
+        if (num >= 0) {
+            this.points = Math.ceil(num);
+        }
+    }
+    /**
+     *
+     * @param howMany how many points to add, can be negative
+     */
+    addPoints(howMany) {
+        this.points += Math.ceil(howMany);
+        if (this.points < 0) {
+            this.points = 0;
+        }
     }
 }

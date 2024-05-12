@@ -13,6 +13,9 @@ class Tournament {
         this.order = [];
         this.pointsToSet = 15;
         this.setsToWin = 2;
+        this.pointsForWin = 1;
+        this.pointsForLose = 0;
+        this.pointsForDraw = 0;
     }
     /**
      * Add a Team to the Tournament. Make sure
@@ -107,6 +110,38 @@ class Tournament {
     }
     getTeams() {
         return this.teams;
+    }
+    getPointsForWin() {
+        return this.pointsForWin;
+    }
+    /**
+     *
+     * @param num greater or equal 0
+     */
+    setPointsForWin(num) {
+        if (num >= 0) {
+            this.pointsForWin = num;
+        }
+    }
+    getPointsForLose() {
+        return this.pointsForLose;
+    }
+    /**
+     *
+     * @param num any number will do, even negative, if its spicy
+     */
+    setPointsForLose(num) {
+        this.pointsForLose = num;
+    }
+    getPointsForDraw() {
+        return this.pointsForDraw;
+    }
+    /**
+     *
+     * @param num any number
+     */
+    setPointsForDraw(num) {
+        this.pointsForDraw = num;
     }
     addPassedMatch(match) {
         this.matchesPassed.push(match);

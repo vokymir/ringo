@@ -24,8 +24,37 @@ class UI {
         sec === null || sec === void 0 ? void 0 : sec.appendChild(resumeTournament);
         sec === null || sec === void 0 ? void 0 : sec.appendChild(justMatch);
     }
-    static buildTournamentPage() {
+    static buildTournamentPage(tournament) {
         // append all buttons with current tournament inserted to html
+        const sec = document.getElementById("mainSection");
+        if (sec == null) {
+            console.log("Couldn't find 'mainSection' element on the page, cannot build the Tournament page. (UI.buildTournamentPage())");
+            return;
+        }
+        sec.replaceChildren();
+        this.buildTeamsSection(tournament, sec);
+    }
+    static buildTeamsSection(tournament, parentElement) {
+        const teams_wrapper = document.createElement("div");
+        teams_wrapper.id = "teams_wrapper";
+        const add_team = document.createElement("button");
+        add_team.textContent = "Přidat tým";
+        add_team.id = "add_team_button";
+        add_team.addEventListener("click", () => {
+        });
+        tournament.getTeams().forEach(team => {
+            UI.addTeamToTournamentPage(team, teams_wrapper);
+        });
+        parentElement.appendChild(teams_wrapper);
+    }
+    static addTeam() {
+        const modal = document.createElement("dialog"); // continue HERE
+    }
+    static addTeamToTournamentPage(team, parentElement) {
+        const team_card = document.createElement("div");
+        team_card.id = "team_card_" + team.getId().toString();
+        team_card.textContent = team_card.id;
+        parentElement.appendChild(team_card);
     }
     static buildMatchPage() {
         // as before, insert specific match to html if needed

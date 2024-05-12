@@ -6,6 +6,8 @@ class Control {
     static createTournament() {
         // new tournament
         // buildTournamentPage
+        const t = new Tournament();
+        UI.buildTournamentPage(t);
     }
     static loadTournament() {
         // load
